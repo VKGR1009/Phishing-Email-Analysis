@@ -1,0 +1,117 @@
+1. Objective
+The purpose of this analysis is to investigate a suspicious email that appears to be a phishing attempt. The focus is to identify indicators of compromise such as spoofed sender details, authentication failures, deceptive language, suspicious links, and social engineering techniques.
+
+2. Sample Overview
+
+Email File: sample-1161.eml
+
+Subject Line: Microsoft account unusual signin activity
+
+Sender Name: Microsoft account team
+
+Sender Email Address: no-reply@access-accsecurity.com
+
+Recipient: phishing@pot
+
+Message ID: fece2c48-bea3-4a8c-aadf-5fc27029642d@DB5EUR02FT028.eop-EUR02.prod.protection.outlook.com
+
+Reported Suspicious Link: solutionteamrecognizd03@gmail.com
+
+Time Sent: August 19, 2023, 3:49:28 AM GMT+5:30
+
+3. Header Authentication Check
+
+SPF: none – No SPF records detected. The sending domain has not authorized any mail servers, allowing spoofing.
+
+DKIM: none – No DKIM signature found; the integrity of the email content cannot be verified.
+
+DMARC: permerror – The domain has a DMARC configuration error, which prevents enforcement or monitoring.
+
+Conclusion: The lack of SPF, DKIM, and DMARC makes this email extremely untrustworthy and suggests that it could be spoofed or forged.
+
+4. Sender Address & Display Name Mismatch
+
+Claimed Sender Name: Microsoft account team
+
+Actual Email Address: no-reply@access-accsecurity.com
+
+Legitimate Domain Should Be: microsoft.com or outlook.com
+
+Issue: The domain access-accsecurity.com is not related to Microsoft and appears to be an imitation meant to deceive the recipient.
+
+5. Suspicious Links & Contact Info
+
+The email includes a contact email: solutionteamrecognizd03@gmail.com
+
+This is a free Gmail account, not a corporate or verified domain.
+
+The word “recognized” is misspelled as “recognizd”, indicating unprofessional or automated generation.
+
+Conclusion: This is likely a fake support address used to harvest personal information or initiate conversation with the victim.
+
+6. Language Analysis & Urgency Techniques
+
+The email body includes fear-based language such as:
+
+"A user from Russia/Moscow just logged into your account from a new device. If this wasn't you, please report the user. If this was you, we'll trust similar activity in the future."
+
+This uses location-based urgency, a common social engineering tactic.
+
+The message attempts to create panic and urgency so the user responds immediately.
+
+7. Spelling and Grammar Errors
+
+“Recognized” is misspelled as “recognizd” in the sender email.
+
+Other grammar inconsistencies are present, including improper punctuation and unnatural sentence flow.
+
+Conclusion: These linguistic flaws are strong indicators of a phishing attempt.
+
+8. IP Address Mismatch
+
+The email claims login activity from: Russia/Moscow – IP: 103.225.77.255
+
+Upon performing an IP lookup, this address is linked to A2 Hosting (United States), not Russia.
+
+Conclusion: This mismatch further proves deception. The attacker is faking the source of the activity.
+
+9. Secondary Sample Review (Europa Park)
+
+Subject: Europa-Park Umfrage – Free Tickets Offer
+Sender: otto-newsletter@newsletter.otto.de
+Issues Noted:
+
+SPF: Pass (with unknown IP) – Partial validation
+
+DKIM: None
+
+DMARC: Fail
+
+Misleading claim of free tickets for a survey
+
+Uses the same suspicious contact: solutionteamrecognizd03@gmail.com
+
+Conclusion: This is part of a campaign-style phishing attack targeting multiple recipients using different themes (Microsoft login alert, free tickets, etc.) but the same malicious actor/contact.
+
+10. Overall Assessment
+
+Based on all technical and contextual indicators, the email is confirmed as a phishing attempt. The attacker uses:
+
+Spoofed identities
+
+Poorly configured email authentication
+
+Social engineering tactics (urgency, impersonation)
+
+Deceptive email addresses and contact links
+
+Mismatched content and technical data
+
+11. Recommendation
+
+This email should be reported and blocked by mail servers and security tools.
+
+The email domain (access-accsecurity.com) and contact (solutionteamrecognizd03@gmail.com) should be blacklisted.
+
+Educate users to verify sender domains, avoid clicking on links in suspicious emails, and report such messages to the security team.
+
